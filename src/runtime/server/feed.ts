@@ -13,7 +13,8 @@ function resolveContentType(type: FeedType) {
     json1: 'application/json'
   }
 
-  return lookup[type]
+  // return lookup[type]
+  return (lookup.hasOwnProperty(type) ? lookup[type] : 'application/xml') + '; charset=UTF-8'
 }
 
 async function createFeed(options: SourceOptions): Promise<string> {
