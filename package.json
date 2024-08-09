@@ -33,7 +33,8 @@
     "test": "vitest run",
     "test:watch": "vitest watch",
     "prepare": "husky",
-    "stackblitz": "cd .stackblitz && pnpm i && pnpm run dev"
+    "stackblitz": "cd .stackblitz && pnpm i && pnpm run dev",
+    "postinstall": "npm run dev:build"
   },
   "dependencies": {
     "@nuxt/kit": "3.10.3",
