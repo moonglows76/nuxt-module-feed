@@ -14,7 +14,8 @@ function resolveContentType(type: FeedType) {
   }
 
   // return lookup[type]
-  return (lookup.hasOwnProperty(type) ? lookup[type] : 'application/xml') + '; charset=UTF-8'
+  const hasProperty = Object.prototype.hasOwnProperty.call(lookup, type)
+  return (hasProperty ? lookup[type] : 'application/xml') + '; charset=UTF-8'
 }
 
 async function createFeed(options: SourceOptions): Promise<string> {
